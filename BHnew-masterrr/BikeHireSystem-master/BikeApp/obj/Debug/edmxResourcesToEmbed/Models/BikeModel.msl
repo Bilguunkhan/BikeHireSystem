@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BikeHireDatabaseModelStoreContainer" CdmEntityContainer="BikeHireDatabaseEntities">
+    <EntitySetMapping Name="Bikes">
+      <EntityTypeMapping TypeName="BikeHireDatabaseModel.Bike">
+        <MappingFragment StoreEntitySet="Bikes">
+          <ScalarProperty Name="Bike_Id" ColumnName="Bike Id" />
+          <ScalarProperty Name="Bike_Model" ColumnName="Bike Model" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

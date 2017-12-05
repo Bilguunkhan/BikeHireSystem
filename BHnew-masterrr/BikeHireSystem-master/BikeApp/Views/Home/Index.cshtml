@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+
+<div class="jumbotron" style="background-color: white; color: darkslategrey;">
+    <h1>Welcome to Bike Hire Shop!</h1>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <h2><button onclick="location.href='@Url.Action("AvailableBikes", "Bikes")'">Browse available Bikes</button></h2>
+        <br />
+    </div>
+</div>
+
+
+@if (User.IsInRole("Admin"))
+{
+    <div class="row">
+        <div class="col-md-4">
+            <h2><button onclick="location.href='@Url.Action("Index", "ManualRegistrations")'">Record a new customer manually</button></h2>
+        </div>
+    </div>
+
+    //here blocks that you want to show to users with Admin role
+}
+    
+else if (User.IsInRole("Receptionist"))
+{
+    <div class="row">
+        <div class="col-md-4">
+            <h2><button onclick="location.href='@Url.Action("Index", "ManualRegistrations")'">Record a new customer manually</button></h2>
+        </div>
+    </div>
+
+    //here blocks that you want to show to users with Admin role
+}
+
+@if (User.IsInRole("Admin"))
+{
+<div class="row">
+    <div class="col-md-4">
+        <h2><button onclick="location.href='@Url.Action("Index", "Bikes")'">Edit Bikes</button></h2>
+    </div>
+</div>
+}

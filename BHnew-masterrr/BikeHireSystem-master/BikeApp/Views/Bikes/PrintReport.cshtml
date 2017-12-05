@@ -1,0 +1,36 @@
+﻿@model BikeApp.Models.HiringInfo
+
+@{
+    ViewBag.Title = "PrintReport";
+}
+
+<h2>Print Report</h2>
+
+<div>
+    <h4>Bike</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.sDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.sDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.eDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CardInfo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CardInfo)
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Details", "Details","Bikes", new { id = 1002 }, null) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
