@@ -40,6 +40,14 @@ USE [$(DatabaseName)];
 
 
 GO
+PRINT N'Dropping unnamed constraint on [dbo].[ManualRegistration]...';
+
+
+GO
+ALTER TABLE [dbo].[ManualRegistration] DROP CONSTRAINT [UQ__ManualRe__737584F6426B41EC];
+
+
+GO
 PRINT N'Update complete.';
 
 
