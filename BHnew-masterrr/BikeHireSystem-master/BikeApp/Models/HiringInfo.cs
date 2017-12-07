@@ -7,18 +7,17 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-
 namespace BikeApp.Models
 {
+    using System;
+    using System.Collections.Generic;
+    
     public partial class HiringInfo
     {
+        public string fullName { get; set; }
         public string sDate { get; set; }
         public string eDate { get; set; }
-        public int CardInfo { get; set; }
-        //[Key]
+        public Nullable<int> CardInfo { get; set; }
         public int FbikeId { get; set; }
     }
 }

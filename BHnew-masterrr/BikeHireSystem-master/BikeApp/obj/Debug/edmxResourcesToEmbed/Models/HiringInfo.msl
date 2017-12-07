@@ -1,9 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="BikeAppModelsStoreContainer" CdmEntityContainer="BikeHireDatabaseEntities3">
+  <EntityContainerMapping StorageEntityContainer="BikeHireDatabaseModel2StoreContainer" CdmEntityContainer="BikeHireDatabaseEntities2">
     <EntitySetMapping Name="HiringInfoes">
-      <EntityTypeMapping TypeName="BikeApp.Models.HiringInfo">
+      <EntityTypeMapping TypeName="BikeHireDatabaseModel2.HiringInfo">
         <MappingFragment StoreEntitySet="HiringInfoes">
+          <ScalarProperty Name="fullName" ColumnName="fullName" />
           <ScalarProperty Name="sDate" ColumnName="sDate" />
           <ScalarProperty Name="eDate" ColumnName="eDate" />
           <ScalarProperty Name="CardInfo" ColumnName="CardInfo" />

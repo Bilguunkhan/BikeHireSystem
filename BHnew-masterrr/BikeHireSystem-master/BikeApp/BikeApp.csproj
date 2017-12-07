@@ -203,6 +203,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ManualRegistrationsController.cs" />
+    <Compile Include="Controllers\UsersAndBikesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -263,6 +264,24 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ManualRegistration.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\UsersAndBike.cs">
+      <DependentUpon>UsersAndBikes.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UsersAndBikes.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UsersAndBikes.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UsersAndBikes.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UsersAndBikes.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UsersAndBikes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UsersAndBikes.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -304,6 +323,16 @@
       <DependentUpon>ManualRegistration.edmx</DependentUpon>
       <LastGenOutput>ManualRegistration1.cs</LastGenOutput>
     </Content>
+    <Content Include="Models\UsersAndBikes.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>UsersAndBikes.edmx</DependentUpon>
+      <LastGenOutput>UsersAndBikes.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\UsersAndBikes.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>UsersAndBikes.edmx</DependentUpon>
+      <LastGenOutput>UsersAndBikes.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -329,6 +358,13 @@
     </EntityDeploy>
     <Content Include="Models\HiringInfo.edmx.diagram">
       <DependentUpon>HiringInfo.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\UsersAndBikes.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>UsersAndBikes.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\UsersAndBikes.edmx.diagram">
+      <DependentUpon>UsersAndBikes.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -389,6 +425,11 @@
     <Content Include="Views\ManualRegistrations\Edit.cshtml" />
     <Content Include="Views\ManualRegistrations\Index.cshtml" />
     <Content Include="Views\Bikes\PrintReport.cshtml" />
+    <Content Include="Views\UsersAndBikes\Create.cshtml" />
+    <Content Include="Views\UsersAndBikes\Delete.cshtml" />
+    <Content Include="Views\UsersAndBikes\Details.cshtml" />
+    <Content Include="Views\UsersAndBikes\Edit.cshtml" />
+    <Content Include="Views\UsersAndBikes\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

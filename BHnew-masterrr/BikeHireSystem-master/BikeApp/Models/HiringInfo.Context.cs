@@ -13,10 +13,10 @@ namespace BikeApp.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class BikeHireDatabaseEntities3 : DbContext
+    public partial class BikeHireDatabaseEntities2 : DbContext
     {
-        public BikeHireDatabaseEntities3()
-            : base("name=BikeHireDatabaseEntities3")
+        public BikeHireDatabaseEntities2()
+            : base("name=BikeHireDatabaseEntities2")
         {
         }
     

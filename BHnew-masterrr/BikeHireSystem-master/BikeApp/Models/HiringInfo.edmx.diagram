@@ -4,8 +4,8 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="490c4b0501904ec3b06179ea67f3ad85" Name="Diagram1">
-        <EntityTypeShape EntityType="BikeApp.Models.HiringInfo" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+      <Diagram DiagramId="6702328319bb4095ab0e18ae66d7701d" Name="Diagram1">
+        <EntityTypeShape EntityType="BikeHireDatabaseModel2.HiringInfo" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

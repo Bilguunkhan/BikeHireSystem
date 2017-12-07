@@ -15,7 +15,8 @@ namespace BikeApp.Controllers
     public class BikesController : Controller
     {
         private BikeHireDatabaseEntities db = new BikeHireDatabaseEntities();
-        private BikeHireDatabaseEntities3 hdb = new BikeHireDatabaseEntities3();
+        private BikeHireDatabaseEntities2 hdb = new BikeHireDatabaseEntities2();
+        private BikeHireDatabaseEntities3 db2 = new BikeHireDatabaseEntities3();
 
         // GET: Bikes
         public ActionResult Index(string searchString)
@@ -74,20 +75,51 @@ namespace BikeApp.Controllers
         //POST: Hire
         [HttpPost, ActionName("Hire")]
         [ValidateAntiForgeryToken]
-        public ActionResult HireConfirmed([Bind(Include = "sDate, eDate, CardInfo, FbikeId")] HiringInfo hBike)
+        public ActionResult HireConfirmed([Bind(Include = "fullName, sDate, eDate, CardInfo, FbikeId")] HiringInfo hBike)
         {
-            Bike bike = db.Bikes.Find(hBike.FbikeId);
-            bike.Status = "H";
-            db.SaveChanges();
-
-            if (User.IsInRole("Admin") || User.IsInRole("Receptionist"))
+            try
             {
-                hdb.HiringInfoes.Add(hBike);
-                hdb.SaveChanges();
-                return RedirectToAction("Hire", "Bikes", hBike.FbikeId);
-            }
+                Bike bike = db.Bikes.Find(hBike.FbikeId);
+                bike.Status = "H";
+                db.SaveChanges();
+
+                UsersAndBike unb = new UsersAndBike();
+                unb.Name = hBike.fullName;
+                unb.BikeId = bike.Bike_Id;
+                unb.BikeModel = bike.Bike_Model;
+                unb.StardDate = Convert.ToDateTime(hBike.sDate);
+                unb.EndDate = Convert.ToDateTime(hBike.eDate);
+                
+                db2.UsersAndBikes.Add(unb);
+                db2.SaveChanges();
+
+
+                if (User.IsInRole("Admin") || User.IsInRole("Receptionist"))
+                {
+                    hdb.HiringInfoes.Add(hBike);
+                    hdb.SaveChanges();
+                    return RedirectToAction("Hire", "Bikes", hBike.FbikeId);
+                }
 
                 return RedirectToAction("AvailableBikes");
+            }
+            catch (System.Data.Entity.Validation.DbEntityValidationException dbEx)
+            {
+                Exception raise = dbEx;
+                foreach (var validationErrors in dbEx.EntityValidationErrors)
+                {
+                    foreach (var validationError in validationErrors.ValidationErrors)
+                    {
+                        string message = string.Format("{0}:{1}",
+                            validationErrors.Entry.Entity.ToString(),
+                            validationError.ErrorMessage);
+                        // raise a new exception nesting
+                        // the current instance as InnerException
+                        raise = new InvalidOperationException(message, raise);
+                    }
+                }
+                throw raise;
+            }
         }
 
         // GET: Bikes/Details/5

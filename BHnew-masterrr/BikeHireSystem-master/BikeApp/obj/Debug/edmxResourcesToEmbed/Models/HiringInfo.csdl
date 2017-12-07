@@ -1,15 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="BikeApp.Models" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+<Schema Namespace="BikeHireDatabaseModel2" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityType Name="HiringInfo">
     <Key>
       <PropertyRef Name="FbikeId" />
     </Key>
-    <Property Name="sDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="eDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="CardInfo" Type="Int32" Nullable="false" />
+    <Property Name="fullName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="sDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="eDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CardInfo" Type="Int32" />
     <Property Name="FbikeId" Type="Int32" Nullable="false" />
   </EntityType>
-  <EntityContainer Name="BikeHireDatabaseEntities3" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="BikeHireDatabaseEntities2" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="HiringInfoes" EntityType="Self.HiringInfo" />
   </EntityContainer>
 </Schema>

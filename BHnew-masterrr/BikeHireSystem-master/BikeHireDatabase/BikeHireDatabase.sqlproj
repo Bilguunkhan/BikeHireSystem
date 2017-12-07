@@ -61,5 +61,7 @@
   <ItemGroup>
     <Build Include="Bike.sql" />
     <Build Include="ManualRegistration.sql" />
+    <Build Include="HiringInfoes.sql" />
+    <Build Include="UsersAndBikes.sql" />
   </ItemGroup>
 </Project>

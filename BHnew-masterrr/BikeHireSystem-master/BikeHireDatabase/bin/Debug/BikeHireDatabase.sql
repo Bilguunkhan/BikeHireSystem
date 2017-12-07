@@ -15,8 +15,8 @@ SET NUMERIC_ROUNDABORT OFF;
 GO
 :setvar DatabaseName "BikeHireDatabase"
 :setvar DefaultFilePrefix "BikeHireDatabase"
-:setvar DefaultDataPath "C:\Users\pc\AppData\Local\Microsoft\VisualStudio\SSDT\BikeHireDatabase"
-:setvar DefaultLogPath "C:\Users\pc\AppData\Local\Microsoft\VisualStudio\SSDT\BikeHireDatabase"
+:setvar DefaultDataPath "C:\Users\Bilguun.NOMLOG\AppData\Local\Microsoft\VisualStudio\SSDT\BikeHireDatabase"
+:setvar DefaultLogPath "C:\Users\Bilguun.NOMLOG\AppData\Local\Microsoft\VisualStudio\SSDT\BikeHireDatabase"
 
 GO
 :on error exit
@@ -37,14 +37,6 @@ IF N'$(__IsSqlCmdEnabled)' NOT LIKE N'True'
 
 GO
 USE [$(DatabaseName)];
-
-
-GO
-PRINT N'Dropping unnamed constraint on [dbo].[ManualRegistration]...';
-
-
-GO
-ALTER TABLE [dbo].[ManualRegistration] DROP CONSTRAINT [UQ__ManualRe__737584F6426B41EC];
 
 
 GO

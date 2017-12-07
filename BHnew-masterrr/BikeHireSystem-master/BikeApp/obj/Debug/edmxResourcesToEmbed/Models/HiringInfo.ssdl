@@ -1,15 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="BikeApp.Models.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<Schema Namespace="BikeHireDatabaseModel2.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="HiringInfoes">
     <Key>
       <PropertyRef Name="FbikeId" />
     </Key>
-    <Property Name="sDate" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="eDate" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="CardInfo" Type="int" Nullable="false" />
+    <Property Name="fullName" Type="nvarchar" MaxLength="50" />
+    <Property Name="sDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="eDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="CardInfo" Type="int" />
     <Property Name="FbikeId" Type="int" Nullable="false" />
   </EntityType>
-  <EntityContainer Name="BikeAppModelsStoreContainer">
+  <EntityContainer Name="BikeHireDatabaseModel2StoreContainer">
     <EntitySet Name="HiringInfoes" EntityType="Self.HiringInfoes" Schema="dbo" store:Type="Tables" />
   </EntityContainer>
 </Schema>
